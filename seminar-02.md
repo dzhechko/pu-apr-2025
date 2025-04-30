@@ -20,3 +20,37 @@ For non-coding requests (e.g., design, architecture, explanations), apply the sa
 
 For follow-up questions or iterative problem-solving, maintain context and continuity in your responses.
 
+---------------------------
+# Test Driven Dev prompt
+
+## Создаем рабочий прототип функции через тестовые итерации
+Используем Cursor Agent mode и Claude 3.7 model thinking
+
+create a function that converts a json like string (including pydantic type string) into a proper readable json;
+
+Firstly lets write some tests, then implement the code, then run the tests and iterate the code until all tests pass
+
+## Используем Task-Master чтобы написать правильный PRD и разбить его на задачи
+### Создаем next js проект json-viewer
+`npx shadcn@latest init`
+
+### Инициализруем task-master
+`cd json-viewer`
+`task-master init`
+
+### Первый запрос
+Help me build a simple web app using nextjs where users can paste in any example json pydantic type string, and we can help users view the result with + - type expand/collapse buttons;
+
+I already setup the next js project in @json-viewer folder
+
+Help me think through the necessary core functionalities for MVP (Dont write any code yet, just help me think through as engineer manager) and only need the most necessary features
+
+### Второй запрос
+For backend I want to use the python script instead, please update the plan
+
+### Третий запрос
+now lets create a PRD.txt in json-viewer/scripts folder, and use example_prd.txt as reference
+
+Запускаем Task-Master
+`task-master parse-prd scripts/PRD.txt`
+`task-master list`
