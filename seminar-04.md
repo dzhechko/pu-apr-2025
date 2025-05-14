@@ -14,4 +14,20 @@ Debt Reduction Agent creates optimized debt payoff strategies using both analyti
 
 State Management: Each agent stores its results in the shared session state, allowing subsequent agents to build upon prior analysis. This state-passing mechanism enables a coherent analysis pipeline without duplicating work.
 
-# 
+# Блок схема решения
+flowchart TD
+    A["Пользовательский запрос"] --> B["Анализ запроса\n(Агент-аналитик)"]
+    B --> C["Извлечение советов\nиз памяти\n(Агент памяти)"]
+    C --> D["Генерация персонального\nсовета\n(Агент-консультант)"]
+    D --> E["План действий\n(Агент-планировщик)"]
+    E --> F["Форматирование ответа\n(Агент-редактор)"]
+    F --> G["Готовый\nструктурированный ответ"]
+
+    subgraph Tools ["Инструменты"]
+        T1["Калькулятор бюджета"]
+        T2["Анализатор финансовых метрик"]
+    end
+
+    D -- "Использует" --> T1
+    D -- "Использует" --> T2
+
