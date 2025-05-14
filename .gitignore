@@ -1,0 +1,23 @@
+# Ignore seminar-03 directory
+seminar-03/
+seminar-04/
+
+# General ignores
+.DS_Store
+node_modules/
+dist/
+*.log
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+**/.env
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo 
